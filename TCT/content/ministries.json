@@ -48,15 +48,5 @@
     "lead": "To be announced",
     "meetingTime": "Every Sunday from 8:30 AM",
     "coverImage": "/images/placeholder-ministry.jpg"
-  },
-  {
-    "slug": "creative-arts",
-    "name": "Creative Arts",
-    "icon": "Palette",
-    "tagline": "Creativity in the service of the Gospel",
-    "description": "Drama, spoken word, dance, visual arts — the Creative Arts ministry channels God-given creative gifts to communicate truth in fresh and compelling ways.",
-    "lead": "To be announced",
-    "meetingTime": "Thursdays, 6:30 PM",
-    "coverImage": "/images/placeholder-ministry.jpg"
   }
 ]

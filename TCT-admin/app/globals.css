@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-sidebar: #1C3A2E;
+  --color-accent: #C9A845;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #F3F4F6;
+  color: #111827;
+}

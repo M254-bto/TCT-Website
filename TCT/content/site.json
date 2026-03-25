@@ -1,0 +1,142 @@
+{
+  "name": "Trinity Chapel Thika",
+  "shortName": "TC Thika",
+  "tagline": "Faith And Action",
+  "subTagline": "Right Teachings of the Scriptures",
+  "scripture": "For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing soul and spirit, joints and marrow; it judges the thoughts and attitudes of the heart.",
+  "scriptureRef": "Hebrews 4:12",
+  "mission": "Reach W.I.D.E for Christ",
+  "vision": "Grow D.E.E.P in the Word",
+  "communityStatement": "We are a community of people loving each other and our Lord. We grow to be completely humble and gentle, patient, bearing with one another in love.",
+  "address": {
+    "street": "27 Mnarani Road",
+    "area": "Mnarani",
+    "city": "Thika",
+    "country": "Kenya",
+    "full": "27 Mnarani, Thika, Kenya"
+  },
+  "contact": {
+    "phone": "+254 748 892 212",
+    "email": "info@tckilifi.org"
+  },
+  "mapUrl": "https://maps.google.com/?q=27+Mnarani+Thika+Kenya",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.9447!2d39.8498!3d-3.6296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMzgnMDUuNiJTIDM5wrA1MCc1OS4zIkU!5e0!3m2!1sen!2ske!4v1000000000000",
+  "giving": {
+    "mpesa": {
+      "paybill": "123456",
+      "account": "TITHE"
+    },
+    "bank": {
+      "name": "Equity Bank",
+      "accountName": "Trinity Chapel Thika",
+      "accountNumber": "0123456789012",
+      "branch": "Thika Branch",
+      "swiftCode": "EQBLKENA"
+    }
+  },
+  "socials": {
+    "facebook": "https://www.facebook.com/TrinityChapelThika",
+    "twitter": "https://twitter.com/TCThika",
+    "instagram": "https://www.instagram.com/trinitychapelkilifi/",
+    "youtube": "https://www.youtube.com/channel/UCAOkwuYxJuOqiYAj1Vy5JIg"
+  },
+  "services": [
+    {
+      "name": "Sunday Service",
+      "day": "Sunday",
+      "time": "9:00 – 11:00 am",
+      "note": "All are welcome"
+    },
+    {
+      "name": "eGroups / Bible Study",
+      "day": "Thursday",
+      "time": "6:00 – 8:00 pm",
+      "note": "Community small groups"
+    },
+    {
+      "name": "Quest Programme",
+      "day": "Monthly",
+      "time": "See Events",
+      "note": "Youth & young adults"
+    }
+  ],
+  "deep": [
+    {
+      "letter": "D",
+      "word": "Daily Devotions",
+      "description": "Nurturing a personal rhythm of prayer, scripture, and quiet time with God."
+    },
+    {
+      "letter": "E",
+      "word": "eGroups",
+      "description": "Small-group Bible studies that create real community and accountability."
+    },
+    {
+      "letter": "E",
+      "word": "Engagement",
+      "description": "Serving one another and our city with practical love and sacrifice."
+    },
+    {
+      "letter": "P",
+      "word": "Pulpit",
+      "description": "Sunday gatherings anchored in verse-by-verse expository preaching."
+    }
+  ],
+  "wide": [
+    {
+      "letter": "W",
+      "word": "Witness",
+      "description": "Sharing the gospel boldly across Thika county — 100,000 people goal."
+    },
+    {
+      "letter": "I",
+      "word": "Impact",
+      "description": "Transforming six sectors of society: family, government, business, education, arts, and media."
+    },
+    {
+      "letter": "D",
+      "word": "Discipleship",
+      "description": "Raising 10,000 Christ-followers outside the Chapel walls."
+    },
+    {
+      "letter": "E",
+      "word": "Establish Churches",
+      "description": "Planting new congregations in Malindi and Vipingo."
+    }
+  ],
+  "leadership": [
+    {
+      "name": "Pastor Patrick W.",
+      "role": "Lead Pastor",
+      "bio": "Patrick leads Trinity Chapel Thika with a passion for expository preaching and community transformation.",
+      "image": "/images/placeholder-pastor.jpg",
+      "socials": {
+        "twitter": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Pastor Eustus Njima",
+      "role": "Quest Pastor",
+      "bio": "Eustus shepherds TC Thika's Quest ministry, connecting with youth and young adults across Thika.",
+      "image": "/images/placeholder-pastor.jpg",
+      "socials": {
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "James King'ara",
+      "role": "Discipleship",
+      "bio": "James oversees discipleship pathways, helping members grow deeper in their walk with Christ.",
+      "image": "/images/placeholder-pastor.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Emanuel Mwakughu",
+      "role": "Church Admin",
+      "bio": "Emanuel keeps TC Thika running smoothly, serving the congregation with humility and excellence.",
+      "image": "/images/placeholder-pastor.jpg",
+      "socials": {}
+    }
+  ]
+}

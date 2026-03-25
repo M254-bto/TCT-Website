@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-cream-50:   #FAFAF7;
+  --color-cream-100:  #F4EFE8;
+  --color-cream-200:  #EAE2D6;
+  --color-forest-900: #0F2019;
+  --color-forest-800: #1C3A2E;
+  --color-forest-700: #2D6A4F;
+  --color-forest-600: #3A8A65;
+  --color-gold-400:   #E2C26A;
+  --color-gold-500:   #C9A845;
+  --color-gold-600:   #A8892E;
+  --color-charcoal:   #1A1A1A;
+  --color-muted:      #6B7280;
+
+  /* Typography */
+  --font-serif:  var(--font-cormorant), Georgia, serif;
+  --font-sans:   var(--font-inter), system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.6s ease forwards;
+  --animate-fade-in: fade-in 0.5s ease forwards;
+}
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-cream-50);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+/* ── Typography helpers ─────────────────────────────────────── */
+.font-serif   { font-family: var(--font-serif); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ── Prose overrides for blog content ──────────────────────── */
+.prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-serif);
+  color: var(--color-forest-800);
+}
+.prose a {
+  color: var(--color-forest-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-gold-500);
+  color: var(--color-forest-800);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* ── Utility: gold divider ──────────────────────────────────── */
+.gold-rule {
+  width: 3rem;
+  height: 2px;
+  background: var(--color-gold-500);
+  border-radius: 9999px;
+}
+
+/* ── Audio player reset ─────────────────────────────────────── */
+audio { display: none; }
+
+/* ── Custom scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar      { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream-100); }
+::-webkit-scrollbar-thumb { background: var(--color-forest-700); border-radius: 3px; }
+

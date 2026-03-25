@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "men-prayer-retreat-2025",
+    "title": "Men's Prayer Retreat",
+    "date": "2025-08-18",
+    "endDate": "2025-08-20",
+    "time": "9:00 AM",
+    "location": "TC Thika Campgrounds, Mnarani",
+    "status": "upcoming",
+    "category": "Retreat",
+    "excerpt": "A three-day retreat for men to seek the face of God, build brotherhood, and return renewed and on fire.",
+    "description": "Join us for our annual Men's Prayer Retreat — three purposeful days of worship, prayer, and fellowship in the heart of Thika. Sessions will be led by pastoral team members. Cost: Ksh 1,500 (covers accommodation and meals).",
+    "coverImage": "/images/placeholder-event.jpg"
+  },
+  {
+    "slug": "quest-sunday-august",
+    "title": "Quest Sunday",
+    "date": "2025-08-03",
+    "endDate": "2025-08-03",
+    "time": "6:00 PM",
+    "location": "TC Thika Main Auditorium",
+    "status": "upcoming",
+    "category": "Youth",
+    "excerpt": "An exciting Sunday evening experience designed for young people — worship, the Word, and authentic community.",
+    "description": "Quest Sunday is TC Thika's monthly gathering for youth and young adults. Expect powerful worship, a relevant message from the Word, spoken word, and time to connect with peers who are serious about God.",
+    "coverImage": "/images/placeholder-event.jpg"
+  },
+  {
+    "slug": "game-night",
+    "title": "Game Night",
+    "date": "2025-07-26",
+    "endDate": "2025-07-26",
+    "time": "5:00 PM",
+    "location": "TC Thika Fellowship Hall",
+    "status": "past",
+    "category": "Community",
+    "excerpt": "An evening of board games, laughter, and great food. Everyone is welcome — families, couples, and individuals!",
+    "description": "TC Thika's community Game Night is all about fun and connection. Bring your favourite board game or card game, and we'll supply the snacks and good vibes. Free entry.",
+    "coverImage": "/images/placeholder-event.jpg"
+  },
+  {
+    "slug": "ladies-conference-2025",
+    "title": "Ladies' Conference: Rooted",
+    "date": "2025-09-13",
+    "endDate": "2025-09-14",
+    "time": "9:00 AM",
+    "location": "TC Thika Main Auditorium",
+    "status": "upcoming",
+    "category": "Conference",
+    "excerpt": "A two-day gathering celebrating women grounded in the Word — worship, teaching, testimony, and sisterhood.",
+    "description": "The TC Thika Ladies' Ministry presents 'Rooted' — a biennial conference for women at all stages of faith. This year's theme is Colossians 2:7: rooted and built up in him, strengthened in the faith. Registration: Ksh 800.",
+    "coverImage": "/images/placeholder-event.jpg"
+  }
+]

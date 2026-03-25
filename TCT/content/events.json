@@ -13,19 +13,6 @@
     "coverImage": "/images/placeholder-event.jpg"
   },
   {
-    "slug": "quest-sunday-august",
-    "title": "Quest Sunday",
-    "date": "2025-08-03",
-    "endDate": "2025-08-03",
-    "time": "6:00 PM",
-    "location": "TC Thika Main Auditorium",
-    "status": "upcoming",
-    "category": "Youth",
-    "excerpt": "An exciting Sunday evening experience designed for young people — worship, the Word, and authentic community.",
-    "description": "Quest Sunday is TC Thika's monthly gathering for youth and young adults. Expect powerful worship, a relevant message from the Word, spoken word, and time to connect with peers who are serious about God.",
-    "coverImage": "/images/placeholder-event.jpg"
-  },
-  {
     "slug": "game-night",
     "title": "Game Night",
     "date": "2025-07-26",

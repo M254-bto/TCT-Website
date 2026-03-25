@@ -15,7 +15,7 @@ export async function GET(
   const file = FILES[type]
   if (!file) return NextResponse.json({ error: 'Unknown type' }, { status: 404 })
   try {
-    return NextResponse.json(readJson(file))
+    return NextResponse.json(await readJson(file))
   } catch {
     return NextResponse.json({ error: 'Read failed' }, { status: 500 })
   }
@@ -31,10 +31,10 @@ export async function POST(
   try {
     const body = await req.json()
     if (!body.slug) body.slug = slugify(String(body.title ?? body.name ?? 'item'))
-    const items = readJson<Record<string, unknown>[]>(file)
+    const items = await readJson<Record<string, unknown>[]>(file)
     if (items.some((i) => i.slug === body.slug)) body.slug = `${body.slug}-${Date.now()}`
     items.push(body)
-    writeJson(file, items)
+    await writeJson(file, items)
     return NextResponse.json(body, { status: 201 })
   } catch {
     return NextResponse.json({ error: 'Save failed' }, { status: 500 })

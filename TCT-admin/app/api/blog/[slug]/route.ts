@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  const post = readBlogPost(slug)
+  const post = await readBlogPost(slug)
   if (!post) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json(post)
 }
@@ -17,7 +17,7 @@ export async function PUT(
 ) {
   const { slug } = await params
   const body = await req.json()
-  writeBlogPost({ ...body, slug })
+  await writeBlogPost({ ...body, slug })
   return NextResponse.json({ ...body, slug })
 }
 
@@ -26,6 +26,6 @@ export async function DELETE(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  deleteBlogPost(slug)
+  await deleteBlogPost(slug)
   return NextResponse.json({ success: true })
 }

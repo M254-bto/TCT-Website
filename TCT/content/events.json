@@ -13,19 +13,6 @@
     "coverImage": "/images/placeholder-event.jpg"
   },
   {
-    "slug": "game-night",
-    "title": "Game Night",
-    "date": "2025-07-26",
-    "endDate": "2025-07-26",
-    "time": "5:00 PM",
-    "location": "TC Thika Fellowship Hall",
-    "status": "past",
-    "category": "Community",
-    "excerpt": "An evening of board games, laughter, and great food. Everyone is welcome — families, couples, and individuals!",
-    "description": "TC Thika's community Game Night is all about fun and connection. Bring your favourite board game or card game, and we'll supply the snacks and good vibes. Free entry.",
-    "coverImage": "/images/placeholder-event.jpg"
-  },
-  {
     "slug": "ladies-conference-2025",
     "title": "Ladies' Conference: Rooted",
     "date": "2025-09-13",

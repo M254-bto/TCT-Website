@@ -3,23 +3,23 @@
   "shortName": "TC Thika",
   "tagline": "Faith And Action",
   "subTagline": "Grow deep to reach wide",
-  "scripture": "For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing soul and spirit, joints and marrow; it judges the thoughts and attitudes of the heart.",
-  "scriptureRef": "Hebrews 4:12",
+  "scripture": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who Diligently seek him.",
+  "scriptureRef": "Hebrews 11:6",
   "mission": "Reach W.I.D.E for Christ",
   "vision": "Grow D.E.E.P in the Word",
   "communityStatement": "We are a community of people loving each other and our Lord. We grow to be completely humble and gentle, patient, bearing with one another in love.",
   "address": {
-    "street": "27 Mnarani Road",
-    "area": "Mnarani",
+    "street": "St. Davids School, Mugo Kibiru Rd.",
+    "area": "Section 9",
     "city": "Thika",
     "country": "Kenya",
-    "full": "27 Mnarani, Thika, Kenya"
+    "full": "St. Davids School, Mugo Kibiru Rd."
   },
   "contact": {
     "phone": "+254 748 892 212",
-    "email": "info@tckilifi.org"
+    "email": "thikatrinitychapel@gmail.com"
   },
-  "mapUrl": "https://maps.google.com/?q=27+Mnarani+Thika+Kenya",
+  "mapUrl": "https://maps.app.goo.gl/PB2SgjfLLYehEPUK6",
   "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.9447!2d39.8498!3d-3.6296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMzgnMDUuNiJTIDM5wrA1MCc1OS4zIkU!5e0!3m2!1sen!2ske!4v1000000000000",
   "giving": {
     "mpesa": {
@@ -35,10 +35,10 @@
     }
   },
   "socials": {
-    "facebook": "https://www.facebook.com/TrinityChapelThika",
+    "facebook": "https://www.facebook.com/TCThika/",
     "twitter": "https://twitter.com/TCThika",
-    "instagram": "https://www.instagram.com/trinitychapelkilifi/",
-    "youtube": "https://www.youtube.com/channel/UCAOkwuYxJuOqiYAj1Vy5JIg"
+    "instagram": "https://www.instagram.com/tctthika",
+    "youtube": "https://m.youtube.com/@trinitychapelthika"
   },
   "services": [
     {
@@ -48,15 +48,9 @@
       "note": "All are welcome"
     },
     {
-      "name": "eGroups / Bible Study",
-      "day": "Thursday",
-      "time": "6:00 – 8:00 pm",
-      "note": "Community small groups"
-    },
-    {
-      "name": "Quest Programme",
-      "day": "Monthly",
-      "time": "See Events",
+      "name": "Quest Program",
+      "day": "Sunday",
+      "time": "9:00 - 11:00 am",
       "note": "Youth & young adults"
     }
   ],
@@ -106,7 +100,7 @@
   ],
   "leadership": [
     {
-      "name": "Pastor Patrick W.",
+      "name": "Rev. Gitau Muchugia",
       "role": "Lead Pastor",
       "bio": "Patrick leads Trinity Chapel Thika with a passion for expository preaching and community transformation.",
       "image": "/images/placeholder-pastor.jpg",
@@ -116,27 +110,13 @@
       }
     },
     {
-      "name": "Pastor Eustus Njima",
-      "role": "Quest Pastor",
+      "name": "Pst. Chris Chuchu",
+      "role": "Associate Pastor",
       "bio": "Eustus shepherds TC Thika's Quest ministry, connecting with youth and young adults across Thika.",
       "image": "/images/placeholder-pastor.jpg",
       "socials": {
         "instagram": "#"
       }
-    },
-    {
-      "name": "James King'ara",
-      "role": "Discipleship",
-      "bio": "James oversees discipleship pathways, helping members grow deeper in their walk with Christ.",
-      "image": "/images/placeholder-pastor.jpg",
-      "socials": {}
-    },
-    {
-      "name": "Emanuel Mwakughu",
-      "role": "Church Admin",
-      "bio": "Emanuel keeps TC Thika running smoothly, serving the congregation with humility and excellence.",
-      "image": "/images/placeholder-pastor.jpg",
-      "socials": {}
     }
   ]
 }

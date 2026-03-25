@@ -30,16 +30,6 @@
     "coverImage": "/images/placeholder-ministry.jpg"
   },
   {
-    "slug": "discipleship",
-    "name": "Discipleship",
-    "icon": "BookOpen",
-    "tagline": "Building mature, reproducing disciples",
-    "description": "The Discipleship ministry trains believers to go deeper in scripture, develop a daily devotional life, and reproduce themselves by mentoring others.",
-    "lead": "James King'ara",
-    "meetingTime": "eGroups every Thursday, 6:00 PM",
-    "coverImage": "/images/placeholder-ministry.jpg"
-  },
-  {
     "slug": "media",
     "name": "Media Ministry",
     "icon": "Video",

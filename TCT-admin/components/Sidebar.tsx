@@ -8,7 +8,6 @@ import {
   BookOpen,
   Calendar,
   Users,
-  FileText,
   Settings,
   Menu,
   X,
@@ -19,7 +18,6 @@ const nav = [
   { href: '/sermons', label: 'Sermons', icon: BookOpen },
   { href: '/events', label: 'Events', icon: Calendar },
   { href: '/ministries', label: 'Ministries', icon: Users },
-  { href: '/blog', label: 'Blog', icon: FileText },
   { href: '/site', label: 'Site Config', icon: Settings },
 ]
 

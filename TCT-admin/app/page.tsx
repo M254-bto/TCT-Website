@@ -2,32 +2,29 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { BookOpen, Calendar, Users, FileText, ArrowRight, Settings } from 'lucide-react'
+import { BookOpen, Calendar, Users, ArrowRight, Settings } from 'lucide-react'
 
 interface Counts {
   sermons: number
   events: number
   ministries: number
-  blog: number
 }
 
 const statCards = [
   { key: 'sermons' as const, label: 'Sermons', href: '/sermons', icon: BookOpen, bg: '#1C3A2E' },
   { key: 'events' as const, label: 'Events', href: '/events', icon: Calendar, bg: '#2D6A4F' },
   { key: 'ministries' as const, label: 'Ministries', href: '/ministries', icon: Users, bg: '#1C3A2E' },
-  { key: 'blog' as const, label: 'Blog Posts', href: '/blog', icon: FileText, bg: '#2D6A4F' },
 ]
 
 const quickActions = [
   { href: '/sermons', label: 'Manage Sermons', icon: BookOpen },
   { href: '/events', label: 'Manage Events', icon: Calendar },
   { href: '/ministries', label: 'Manage Ministries', icon: Users },
-  { href: '/blog', label: 'Manage Blog', icon: FileText },
   { href: '/site', label: 'Site Configuration', icon: Settings },
 ]
 
 export default function DashboardPage() {
-  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0, blog: 0 })
+  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0 })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -35,14 +32,12 @@ export default function DashboardPage() {
       fetch('/api/content/sermons').then((r) => r.json()),
       fetch('/api/content/events').then((r) => r.json()),
       fetch('/api/content/ministries').then((r) => r.json()),
-      fetch('/api/blog').then((r) => r.json()),
     ])
-      .then(([sermons, events, ministries, blog]) => {
+      .then(([sermons, events, ministries]) => {
         setCounts({
           sermons: Array.isArray(sermons) ? sermons.length : 0,
           events: Array.isArray(events) ? events.length : 0,
           ministries: Array.isArray(ministries) ? ministries.length : 0,
-          blog: Array.isArray(blog) ? blog.length : 0,
         })
       })
       .catch(() => {})
@@ -57,7 +52,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {statCards.map(({ key, label, href, icon: Icon, bg }) => (
           <Link
             key={key}

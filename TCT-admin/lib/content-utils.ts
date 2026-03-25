@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 
 // ─── Environment ──────────────────────────────────────────────────────────────
 
@@ -112,90 +111,4 @@ export async function writeJson(filename: string, data: unknown): Promise<void> 
   await ghPut(repoPath, Buffer.from(json).toString('base64'), `chore: update ${filename}`, sha)
 }
 
-// ─── Blog ────────────────────────────────────────────────────────────────────
 
-export interface BlogPost {
-  slug: string
-  title: string
-  date?: string
-  category?: string
-  author?: string
-  excerpt?: string
-  coverImage?: string
-  content: string
-}
-
-export async function readBlogPosts(): Promise<BlogPost[]> {
-  if (!isProd) {
-    const blogDir = path.join(LOCAL_CONTENT_DIR, 'blog')
-    return fs
-      .readdirSync(blogDir)
-      .filter((f) => f.endsWith('.md'))
-      .map((file) => {
-        const slug = file.replace(/\.md$/, '')
-        const { data, content } = matter(fs.readFileSync(path.join(blogDir, file), 'utf8'))
-        return { slug, content, ...data } as BlogPost
-      })
-  }
-  const files = await ghGetDir(`${CONTENT_PREFIX}/blog`)
-  const posts = await Promise.all(
-    files
-      .filter((f) => f.name.endsWith('.md'))
-      .map(async (f) => {
-        const { content: raw } = await ghGet(f.path)
-        const decoded = Buffer.from(raw, 'base64').toString('utf8')
-        const { data, content } = matter(decoded)
-        return { slug: f.name.replace(/\.md$/, ''), content, ...data } as BlogPost
-      })
-  )
-  return posts
-}
-
-export async function readBlogPost(slug: string): Promise<BlogPost | null> {
-  if (!isProd) {
-    const filePath = path.join(LOCAL_CONTENT_DIR, 'blog', `${slug}.md`)
-    if (!fs.existsSync(filePath)) return null
-    const { data, content } = matter(fs.readFileSync(filePath, 'utf8'))
-    return { slug, content, ...data } as BlogPost
-  }
-  try {
-    const { content: raw } = await ghGet(`${CONTENT_PREFIX}/blog/${slug}.md`)
-    const { data, content } = matter(Buffer.from(raw, 'base64').toString('utf8'))
-    return { slug, content, ...data } as BlogPost
-  } catch {
-    return null
-  }
-}
-
-export async function writeBlogPost(post: BlogPost): Promise<void> {
-  const { slug, content, ...fm } = post
-  const fileContent = matter.stringify(content || '', fm)
-  if (!isProd) {
-    fs.writeFileSync(path.join(LOCAL_CONTENT_DIR, 'blog', `${slug}.md`), fileContent, 'utf8')
-    return
-  }
-  const repoPath = `${CONTENT_PREFIX}/blog/${slug}.md`
-  let sha: string | undefined
-  try {
-    sha = (await ghGet(repoPath)).sha
-  } catch {
-    // New file
-  }
-  await ghPut(
-    repoPath,
-    Buffer.from(fileContent).toString('base64'),
-    `chore: update blog/${slug}.md`,
-    sha
-  )
-}
-
-export async function deleteBlogPost(slug: string): Promise<void> {
-  if (!isProd) {
-    const filePath = path.join(LOCAL_CONTENT_DIR, 'blog', `${slug}.md`)
-    if (fs.existsSync(filePath)) fs.unlinkSync(filePath)
-    return
-  }
-  const repoPath = `${CONTENT_PREFIX}/blog/${slug}.md`
-  const { sha } = await ghGet(repoPath)
-  await ghDelete(repoPath, sha, `chore: delete blog/${slug}.md`)
-}

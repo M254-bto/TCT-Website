@@ -16,22 +16,22 @@
     "full": "St. Davids School, Mugo Kibiru Rd."
   },
   "contact": {
-    "phone": "+254 748 892 212",
+    "phone":"",
     "email": "thikatrinitychapel@gmail.com"
   },
   "mapUrl": "https://maps.app.goo.gl/PB2SgjfLLYehEPUK6",
   "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.162767666242!2d37.0665318!3d-1.0386537999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4fdf6fa87b73%3A0xe5b269a75726260a!2sTrinity%20Chapel%20Thika!5e0!3m2!1sen!2ske!4v1774483220116!5m2!1sen!2ske",
   "giving": {
     "mpesa": {
-      "paybill": "123456",
-      "account": "TITHE"
+      "paybill": "4083611",
+      "account": "OFFERING/TITHE (Your reason for giving)"
     },
     "bank": {
-      "name": "Equity Bank",
-      "accountName": "Trinity Chapel Thika",
-      "accountNumber": "0123456789012",
-      "branch": "Thika Branch",
-      "swiftCode": "EQBLKENA"
+      "name": "NCBA Bank",
+      "accountName": "Trinity Chapel Ruiru",
+      "accountNumber": "1004873986",
+      "branch": "Prestige",
+      "swiftCode": "CBAFKENX"
     }
   },
   "socials": {
@@ -44,14 +44,14 @@
     {
       "name": "Sunday Service",
       "day": "Sunday",
-      "time": "9:00 – 11:00 am",
+      "time": "10:00 – 12:00 am",
       "note": "All are welcome"
     },
     {
       "name": "Quest Program",
       "day": "Sunday",
-      "time": "9:00 - 11:00 am",
-      "note": "Youth & young adults"
+      "time": "10:00 – 12:00 am",
+      "note": "Children program during Sunday service"
     }
   ],
   "deep": [
@@ -102,7 +102,7 @@
     {
       "name": "Rev. Gitau Muchugia",
       "role": "Lead Pastor",
-      "bio": "Patrick leads Trinity Chapel Thika with a passion for expository preaching and community transformation.",
+      "bio": "Gitau Muchugia leads Trinity Chapel Thika with a passion for expository preaching and community transformation.",
       "image": "/images/placeholder-pastor.jpg",
       "socials": {
         "twitter": "#",
@@ -112,7 +112,7 @@
     {
       "name": "Pst. Chris Chuchu",
       "role": "Associate Pastor",
-      "bio": "Eustus shepherds TC Thika's Quest ministry, connecting with youth and young adults across Thika.",
+      "bio": "Chris Chuchu shepherds TC Thika's Quest ministry, connecting with youth and young adults across Thika.",
       "image": "/images/placeholder-pastor.jpg",
       "socials": {
         "instagram": "#"

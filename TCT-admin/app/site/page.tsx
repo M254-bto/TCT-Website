@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Plus, Trash2, Save } from 'lucide-react'
+import { useEffect, useState, useRef } from 'react'
+import { Plus, Trash2, Save, Upload, Loader2 } from 'lucide-react'
 import { useToast } from '@/components/Toast'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
@@ -42,7 +42,16 @@ interface SiteConfig {
   services?: Array<{ day?: string; time?: string; name?: string }>
   deep?: Array<{ title?: string; description?: string }>
   wide?: Array<{ title?: string; description?: string }>
-  leadership?: Array<{ name?: string; role?: string; image?: string }>
+  leadership?: Array<{
+    name?: string
+    role?: string
+    image?: string
+    bio?: string
+    socials?: {
+      twitter?: string
+      instagram?: string
+    }
+  }>
 }
 
 // ─── Shared UI ─────────────────────────────────────────────────────────────
@@ -143,6 +152,123 @@ function DeepWideRepeater({
   )
 }
 
+function LeaderCard({
+  item,
+  onUpdate,
+  onDelete,
+}: {
+  item: NonNullable<SiteConfig['leadership']>[number]
+  onUpdate: (updated: typeof item) => void
+  onDelete: () => void
+}) {
+  const [uploading, setUploading] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setUploading(true)
+    const formData = new FormData()
+    formData.append('file', file)
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
+      if (!res.ok) throw new Error('Upload failed')
+      const data = await res.json()
+      onUpdate({ ...item, image: data.url })
+    } catch (err) {
+      console.error(err)
+      alert('Failed to upload image. Please try again.')
+    } finally {
+      setUploading(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col md:flex-row gap-5 p-5 bg-gray-50 border border-gray-200 rounded-xl relative group hover:border-[#1C3A2E]/30 transition-all duration-200">
+      {/* Absolute delete button at top right */}
+      <button
+        onClick={onDelete}
+        className="absolute top-3 right-3 p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+        title="Remove Leader"
+      >
+        <Trash2 size={16} />
+      </button>
+
+      {/* Image Upload Area */}
+      <div className="flex flex-col items-center shrink-0 w-full md:w-36">
+        <div 
+          onClick={() => fileInputRef.current?.click()}
+          className="relative w-28 h-28 rounded-xl overflow-hidden bg-gray-200 border border-gray-300 flex items-center justify-center group/img cursor-pointer shadow-sm hover:shadow transition-all"
+        >
+          {item.image ? (
+            <img src={item.image} alt={item.name || 'Pastor'} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-gray-400 text-xs">No Photo</span>
+          )}
+          {uploading && (
+            <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white">
+              <Loader2 className="animate-spin" size={20} />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-black/65 opacity-0 group-hover/img:opacity-100 flex flex-col items-center justify-center text-white text-[11px] font-medium transition-opacity">
+            <Upload size={16} className="mb-1" />
+            Upload Photo
+          </div>
+        </div>
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          accept="image/*"
+          className="hidden"
+        />
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          className="mt-2 text-xs font-semibold text-[#1C3A2E] hover:underline"
+        >
+          {item.image ? 'Change Photo' : 'Upload Photo'}
+        </button>
+      </div>
+
+      {/* Form Fields */}
+      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Field label="Full Name">
+          <input
+            type="text"
+            value={item.name ?? ''}
+            onChange={(e) => onUpdate({ ...item, name: e.target.value })}
+            className={cls}
+            placeholder="e.g. Rev. Gitau Muchugia"
+          />
+        </Field>
+        <Field label="Role / Title">
+          <input
+            type="text"
+            value={item.role ?? ''}
+            onChange={(e) => onUpdate({ ...item, role: e.target.value })}
+            className={cls}
+            placeholder="e.g. Lead Pastor"
+          />
+        </Field>
+        <Field label="Description / Bio" className="md:col-span-2">
+          <textarea
+            value={item.bio ?? ''}
+            onChange={(e) => onUpdate({ ...item, bio: e.target.value })}
+            rows={3}
+            className={cls}
+            placeholder="Brief bio or description of the pastor's work and ministry..."
+          />
+        </Field>
+      </div>
+    </div>
+  )
+}
+
 function LeadershipRepeater({
   items,
   onChange,
@@ -151,30 +277,24 @@ function LeadershipRepeater({
   onChange: (v: SiteConfig['leadership']) => void
 }) {
   const list = items ?? []
-  const set = (i: number, key: string, val: string) =>
-    onChange(list.map((item, idx) => (idx === i ? { ...item, [key]: val } : item)))
+  const handleUpdate = (i: number, updated: NonNullable<SiteConfig['leadership']>[number]) => {
+    onChange(list.map((item, idx) => (idx === i ? updated : item)))
+  }
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {list.map((item, i) => (
-        <div key={i} className="flex gap-2 items-start">
-          <div className="grid grid-cols-3 gap-2 flex-1">
-            <input type="text" value={item.name ?? ''} onChange={(e) => set(i, 'name', e.target.value)} className={cls} placeholder="Full Name" />
-            <input type="text" value={item.role ?? ''} onChange={(e) => set(i, 'role', e.target.value)} className={cls} placeholder="Role / Title" />
-            <input type="url" value={item.image ?? ''} onChange={(e) => set(i, 'image', e.target.value)} className={cls} placeholder="Photo URL" />
-          </div>
-          <button onClick={() => onChange(list.filter((_, idx) => idx !== i))} className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors mt-0.5">
-            <Trash2 size={14} />
-          </button>
-        </div>
+        <LeaderCard
+          key={i}
+          item={item}
+          onUpdate={(updated) => handleUpdate(i, updated)}
+          onDelete={() => onChange(list.filter((_, idx) => idx !== i))}
+        />
       ))}
-      <div className="grid grid-cols-3 gap-2 text-[10px] text-gray-400 px-0.5">
-        <span>Name</span><span>Role</span><span>Photo URL</span>
-      </div>
       <button
-        onClick={() => onChange([...list, { name: '', role: '', image: '' }])}
-        className="flex items-center gap-2 text-xs font-medium text-[#1C3A2E] hover:text-[#2a5240] transition-colors"
+        onClick={() => onChange([...list, { name: '', role: '', bio: '', image: '', socials: { twitter: '#', instagram: '#' } }])}
+        className="flex items-center gap-2 text-xs font-semibold px-4 py-3 border border-dashed border-gray-300 hover:border-[#1C3A2E] text-[#1C3A2E] rounded-xl hover:bg-gray-50 transition-all duration-200 w-full justify-center"
       >
-        <Plus size={14} /> Add Leader
+        <Plus size={14} /> Add Leader / Pastor
       </button>
     </div>
   )

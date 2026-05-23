@@ -139,12 +139,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {site.leadership.map((person) => (
               <div key={person.name} className="group">
-                <div className="aspect-square rounded-2xl bg-[#F4EFE8] border border-[#EAE2D6] mb-4 overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-[#1C3A2E]/15 flex items-center justify-center">
-                    <span className="font-serif text-2xl text-[#1C3A2E]">
-                      {person.name.charAt(0)}
-                    </span>
-                  </div>
+                <div className="aspect-square rounded-2xl bg-[#F4EFE8] border border-[#EAE2D6] mb-4 overflow-hidden flex items-center justify-center relative">
+                  {person.image ? (
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-16 h-16 rounded-full bg-[#1C3A2E]/15 flex items-center justify-center">
+                      <span className="font-serif text-2xl text-[#1C3A2E]">
+                        {person.name ? person.name.charAt(0) : '?'}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <p className="text-[#C9A845] text-xs uppercase tracking-wider font-sans mb-0.5">
                   {person.role}
@@ -152,7 +160,7 @@ export default function AboutPage() {
                 <h3 className="font-serif text-xl text-[#1C3A2E] mb-2">{person.name}</h3>
                 <p className="text-sm text-[#6B7280] leading-relaxed mb-3">{person.bio}</p>
                 <div className="flex gap-2">
-                  {person.socials.twitter && person.socials.twitter !== "#" && (
+                  {person.socials?.twitter && person.socials.twitter !== "#" && (
                     <a
                       href={person.socials.twitter}
                       target="_blank"
@@ -163,7 +171,7 @@ export default function AboutPage() {
                       <ExternalLink size={13} />
                     </a>
                   )}
-                  {person.socials.instagram && person.socials.instagram !== "#" && (
+                  {person.socials?.instagram && person.socials.instagram !== "#" && (
                     <a
                       href={person.socials.instagram}
                       target="_blank"

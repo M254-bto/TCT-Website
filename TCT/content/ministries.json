@@ -20,16 +20,6 @@
     "coverImage": "/images/placeholder-ministry.jpg"
   },
   {
-    "slug": "ladies",
-    "name": "Zahara",
-    "icon": "Heart",
-    "tagline": "Women rooted in grace ",
-    "description": "TC Thika's Ladies Ministry is a vibrant sisterhood that empowers women through Bible study, mentorship, community service, and annual conferences.",
-    "lead": "To be announced",
-    "meetingTime": "",
-    "coverImage": "/images/placeholder-ministry.jpg"
-  },
-  {
     "slug": "media",
     "name": "Media Ministry",
     "icon": "Video",

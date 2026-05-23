@@ -16,7 +16,7 @@
     "full": "St. Davids School, Mugo Kibiru Rd."
   },
   "contact": {
-    "phone":"",
+    "phone": "",
     "email": "thikatrinitychapel@gmail.com"
   },
   "mapUrl": "https://maps.app.goo.gl/PB2SgjfLLYehEPUK6",
@@ -103,7 +103,7 @@
       "name": "Rev. Gitau Muchugia",
       "role": "Lead Pastor",
       "bio": "Gitau Muchugia leads Trinity Chapel Thika with a passion for expository preaching and community transformation.",
-      "image": "/images/placeholder-pastor.jpg",
+      "image": "/images/1000592173-1779573657938.jpg",
       "socials": {
         "twitter": "#",
         "instagram": "#"
@@ -112,9 +112,19 @@
     {
       "name": "Pst. Chris Chuchu",
       "role": "Associate Pastor",
-      "bio": "Chris Chuchu shepherds TC Thika's Quest ministry, connecting with youth and young adults across Thika.",
-      "image": "/images/placeholder-pastor.jpg",
+      "bio": "Chris Chuchu serves with great passion for the youth, guiding them to find their identity in christ",
+      "image": "/images/1000592171-1779573669556.jpg",
       "socials": {
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Pst. Cleo (papa)",
+      "role": "Teens",
+      "bio": "Pastor C, has a calling to serve the next generation, at the point of transition into adulthood.",
+      "image": "/images/1000592169-1779573825859.jpg",
+      "socials": {
+        "twitter": "#",
         "instagram": "#"
       }
     }

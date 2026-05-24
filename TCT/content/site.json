@@ -112,7 +112,7 @@
     {
       "name": "Pst. Chris Chuchu",
       "role": "Associate Pastor",
-      "bio": "Chris Chuchu serves with great passion for the youth, guiding them to find their identity in christ",
+      "bio": "",
       "image": "/images/1000592171-1779573669556.jpg",
       "socials": {
         "instagram": "#"
@@ -120,9 +120,29 @@
     },
     {
       "name": "Pst. Cleo (papa)",
-      "role": "Teens",
-      "bio": "Pastor C, has a calling to serve the next generation, at the point of transition into adulthood.",
+      "role": "NextGen",
+      "bio": "",
       "image": "/images/1000592169-1779573825859.jpg",
+      "socials": {
+        "twitter": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Pst. Zacch Munyao",
+      "role": "",
+      "bio": "",
+      "image": "/images/1000592170-1779636475414.jpg",
+      "socials": {
+        "twitter": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Pst. Carlos",
+      "role": "",
+      "bio": "",
+      "image": "/images/1000592165-1779636512089.jpg",
       "socials": {
         "twitter": "#",
         "instagram": "#"

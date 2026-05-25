@@ -11,6 +11,7 @@ import {
   Settings,
   Menu,
   X,
+  Camera,
 } from 'lucide-react'
 
 const nav = [
@@ -18,6 +19,7 @@ const nav = [
   { href: '/sermons', label: 'Sermons', icon: BookOpen },
   { href: '/events', label: 'Events', icon: Calendar },
   { href: '/ministries', label: 'Ministries', icon: Users },
+  { href: '/community', label: 'Community', icon: Camera },
   { href: '/site', label: 'Site Config', icon: Settings },
 ]
 

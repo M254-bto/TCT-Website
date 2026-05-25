@@ -5,6 +5,7 @@ const FILES: Record<string, string> = {
   sermons: 'sermons.json',
   events: 'events.json',
   ministries: 'ministries.json',
+  community: 'community.json',
 }
 
 export async function GET(

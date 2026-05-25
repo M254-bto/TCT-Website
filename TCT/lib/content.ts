@@ -58,6 +58,13 @@ export interface BlogPost {
   content?: string;
 }
 
+export interface CommunityPhoto {
+  slug: string;
+  title: string;
+  image: string;
+  date: string;
+}
+
 export interface SiteConfig {
   name: string;
   shortName: string;
@@ -181,4 +188,12 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefi
 
 export function getSiteConfig(): SiteConfig {
   return readJson<SiteConfig>("site.json");
+}
+
+// ── Community Photos ─────────────────────────────────────────
+
+export function getCommunityPhotos(): CommunityPhoto[] {
+  return readJson<CommunityPhoto[]>("community.json").sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }

@@ -2,29 +2,32 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { BookOpen, Calendar, Users, ArrowRight, Settings } from 'lucide-react'
+import { BookOpen, Calendar, Users, ArrowRight, Settings, Camera } from 'lucide-react'
 
 interface Counts {
   sermons: number
   events: number
   ministries: number
+  community: number
 }
 
 const statCards = [
   { key: 'sermons' as const, label: 'Sermons', href: '/sermons', icon: BookOpen, bg: '#1C3A2E' },
   { key: 'events' as const, label: 'Events', href: '/events', icon: Calendar, bg: '#2D6A4F' },
   { key: 'ministries' as const, label: 'Ministries', href: '/ministries', icon: Users, bg: '#1C3A2E' },
+  { key: 'community' as const, label: 'Community Photos', href: '/community', icon: Camera, bg: '#C9A845' },
 ]
 
 const quickActions = [
   { href: '/sermons', label: 'Manage Sermons', icon: BookOpen },
   { href: '/events', label: 'Manage Events', icon: Calendar },
   { href: '/ministries', label: 'Manage Ministries', icon: Users },
+  { href: '/community', label: 'Manage Community Photos', icon: Camera },
   { href: '/site', label: 'Site Configuration', icon: Settings },
 ]
 
 export default function DashboardPage() {
-  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0 })
+  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0, community: 0 })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -32,12 +35,14 @@ export default function DashboardPage() {
       fetch('/api/content/sermons').then((r) => r.json()),
       fetch('/api/content/events').then((r) => r.json()),
       fetch('/api/content/ministries').then((r) => r.json()),
+      fetch('/api/content/community').then((r) => r.json()),
     ])
-      .then(([sermons, events, ministries]) => {
+      .then(([sermons, events, ministries, community]) => {
         setCounts({
           sermons: Array.isArray(sermons) ? sermons.length : 0,
           events: Array.isArray(events) ? events.length : 0,
           ministries: Array.isArray(ministries) ? ministries.length : 0,
+          community: Array.isArray(community) ? community.length : 0,
         })
       })
       .catch(() => {})

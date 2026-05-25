@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "sunday-worship",
+    "title": "Sunday Worship & Praise",
+    "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-05-10"
+  },
+  {
+    "slug": "community-outreach",
+    "title": "Community Service Day",
+    "image": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-05-02"
+  },
+  {
+    "slug": "egroups-fellowship",
+    "title": "eGroups Midweek Fellowship",
+    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-04-28"
+  },
+  {
+    "slug": "prayer-and-reflection",
+    "title": "Morning Devotions & Prayer",
+    "image": "https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-04-15"
+  },
+  {
+    "slug": "family-sundays",
+    "title": "Celebrating Families at TC Thika",
+    "image": "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-04-12"
+  },
+  {
+    "slug": "quest-kids-laughter",
+    "title": "Quest Children's Ministry",
+    "image": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-04-05"
+  },
+  {
+    "slug": "fellowship-dinner",
+    "title": "Monthly Shared Luncheon",
+    "image": "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-03-29"
+  },
+  {
+    "slug": "youth-bible-study",
+    "title": "Youth Bible Study & mentorship",
+    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop",
+    "date": "2026-03-15"
+  }
+]

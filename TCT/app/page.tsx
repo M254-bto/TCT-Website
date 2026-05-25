@@ -1,5 +1,6 @@
-import { getSiteConfig, getSermons, getEvents, getMinistries } from "@/lib/content";
+import { getSiteConfig, getSermons, getEvents, getMinistries, getCommunityPhotos } from "@/lib/content";
 import Hero from "@/components/home/Hero";
+import CommunityPreview from "@/components/home/CommunityPreview";
 import AboutPreview from "@/components/home/AboutPreview";
 import SermonsPreview from "@/components/home/SermonsPreview";
 import EventsPreview from "@/components/home/EventsPreview";
@@ -11,6 +12,7 @@ export default function HomePage() {
   const sermons = getSermons();
   const events = getEvents();
   const ministries = getMinistries();
+  const communityPhotos = getCommunityPhotos();
 
   return (
     <>
@@ -20,6 +22,7 @@ export default function HomePage() {
         scripture={site.scripture}
         scriptureRef={site.scriptureRef}
       />
+      <CommunityPreview photos={communityPhotos} />
       <AboutPreview
         vision={site.vision}
         mission={site.mission}

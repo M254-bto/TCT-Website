@@ -25,6 +25,15 @@ export const metadata: Metadata = {
   description:
     "Trinity Chapel Thika — a community focused on the Word. Right teachings of the scriptures from the heart of Thika, Kenya.",
   keywords: ["church", "Thika", "Trinity Chapel", "Kenya", "sermons", "Christian"],
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     siteName: "Trinity Chapel Thika",
     type: "website",

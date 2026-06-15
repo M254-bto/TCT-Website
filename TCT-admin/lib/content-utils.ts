@@ -111,4 +111,112 @@ export async function writeJson(filename: string, data: unknown): Promise<void> 
   await ghPut(repoPath, Buffer.from(json).toString('base64'), `chore: update ${filename}`, sha)
 }
 
+// ─── Blog Markdown CRUD ───────────────────────────────────────────────────────
+import matter from 'gray-matter'
+
+export interface BlogPost {
+  slug: string
+  title: string
+  date: string
+  category: string
+  author: string
+  excerpt: string
+  coverImage: string
+  content?: string
+}
+
+export async function readBlogs(): Promise<BlogPost[]> {
+  if (!isProd) {
+    const blogDir = path.join(LOCAL_CONTENT_DIR, 'blog')
+    if (!fs.existsSync(blogDir)) return []
+    const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.md'))
+    return files.map((file) => {
+      const slug = file.replace(/\.md$/, '')
+      const raw = fs.readFileSync(path.join(blogDir, file), 'utf8')
+      const { data, content } = matter(raw)
+      return {
+        slug,
+        title: data.title ?? '',
+        date: data.date ?? '',
+        category: data.category ?? '',
+        author: data.author ?? '',
+        excerpt: data.excerpt ?? '',
+        coverImage: data.coverImage ?? '',
+        content,
+      }
+    })
+  }
+
+  try {
+    const files = await ghGetDir(`${CONTENT_PREFIX}/blog`)
+    const mdFiles = files.filter((f) => f.type === 'file' && f.name.endsWith('.md'))
+    const posts = await Promise.all(
+      mdFiles.map(async (file) => {
+        const slug = file.name.replace(/\.md$/, '')
+        const { content: base64Content } = await ghGet(file.path)
+        const raw = Buffer.from(base64Content, 'base64').toString('utf8')
+        const { data, content } = matter(raw)
+        return {
+          slug,
+          title: data.title ?? '',
+          date: data.date ?? '',
+          category: data.category ?? '',
+          author: data.author ?? '',
+          excerpt: data.excerpt ?? '',
+          coverImage: data.coverImage ?? '',
+          content,
+        }
+      })
+    )
+    return posts
+  } catch (err) {
+    console.error('Error reading blogs from GitHub:', err)
+    return []
+  }
+}
+
+export async function writeBlog(slug: string, post: Omit<BlogPost, 'slug'>): Promise<void> {
+  const { content, ...meta } = post
+  const fileContent = matter.stringify(content ?? '', meta)
+  
+  if (!isProd) {
+    const blogDir = path.join(LOCAL_CONTENT_DIR, 'blog')
+    if (!fs.existsSync(blogDir)) fs.mkdirSync(blogDir, { recursive: true })
+    fs.writeFileSync(path.join(blogDir, `${slug}.md`), fileContent, 'utf8')
+    return
+  }
+
+  const repoPath = `${CONTENT_PREFIX}/blog/${slug}.md`
+  let sha: string | undefined
+  try {
+    sha = (await ghGet(repoPath)).sha
+  } catch {
+    // New file
+  }
+  await ghPut(
+    repoPath,
+    Buffer.from(fileContent).toString('base64'),
+    `chore: update blog ${slug}`,
+    sha
+  )
+}
+
+export async function deleteBlog(slug: string): Promise<void> {
+  if (!isProd) {
+    const filePath = path.join(LOCAL_CONTENT_DIR, 'blog', `${slug}.md`)
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath)
+    }
+    return
+  }
+
+  const repoPath = `${CONTENT_PREFIX}/blog/${slug}.md`
+  try {
+    const { sha } = await ghGet(repoPath)
+    await ghDelete(repoPath, sha, `chore: delete blog ${slug}`)
+  } catch (err) {
+    console.error(`Error deleting blog ${slug} from GitHub:`, err)
+  }
+}
+
 

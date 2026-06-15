@@ -48,6 +48,10 @@ export default function CommunityPreview({ photos }: CommunityPreviewProps) {
 
   const activePhoto = selectedIndex !== null ? photos[selectedIndex] : null;
 
+  if (!photos || photos.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-10 bg-cream-50 relative overflow-hidden">
       {/* Decorative Background Elements */}
@@ -146,12 +150,6 @@ export default function CommunityPreview({ photos }: CommunityPreviewProps) {
             </motion.div>
           ))}
         </motion.div>
-
-        {photos.length === 0 && (
-          <div className="text-center py-20 text-gray-400">
-            No community photos added yet. Check back soon!
-          </div>
-        )}
       </div>
 
       {/* Lightbox / Gallery Overlay */}

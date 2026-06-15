@@ -12,6 +12,7 @@ import {
   Menu,
   X,
   Camera,
+  FileText,
 } from 'lucide-react'
 
 const nav = [
@@ -20,6 +21,7 @@ const nav = [
   { href: '/events', label: 'Events', icon: Calendar },
   { href: '/ministries', label: 'Ministries', icon: Users },
   { href: '/community', label: 'Community', icon: Camera },
+  { href: '/blogs', label: 'Blogs', icon: FileText },
   { href: '/site', label: 'Site Config', icon: Settings },
 ]
 

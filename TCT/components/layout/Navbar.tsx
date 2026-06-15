@@ -45,23 +45,30 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-18 py-4">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
-            <span
-              className={cn(
-                "font-serif text-xl font-semibold tracking-tight transition-colors duration-300",
-                overlayNav ? "text-white" : "text-[#1C3A2E]"
-              )}
-            >
-              Trinity Chapel
-            </span>
-            <span
-              className={cn(
-                "text-xs font-sans tracking-[0.2em] uppercase transition-colors duration-300",
-                overlayNav ? "text-white/70" : "text-[#C9A845]"
-              )}
-            >
-              Thika
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <img
+              src="/Logo.png"
+              alt="Trinity Chapel Thika Logo"
+              className="h-10 w-10 object-contain rounded-md bg-white/90 p-0.5 shadow-sm border border-[#EAE2D6]/50"
+            />
+            <div className="flex flex-col leading-none">
+              <span
+                className={cn(
+                  "font-serif text-xl font-semibold tracking-tight transition-colors duration-300",
+                  overlayNav ? "text-white" : "text-[#1C3A2E]"
+                )}
+              >
+                Trinity Chapel
+              </span>
+              <span
+                className={cn(
+                  "text-xs font-sans tracking-[0.2em] uppercase transition-colors duration-300",
+                  overlayNav ? "text-white/70" : "text-[#C9A845]"
+                )}
+              >
+                Thika
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

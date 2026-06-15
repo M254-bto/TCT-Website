@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { BookOpen, Calendar, Users, ArrowRight, Settings, Camera } from 'lucide-react'
+import { BookOpen, Calendar, Users, ArrowRight, Settings, Camera, FileText } from 'lucide-react'
 
 interface Counts {
   sermons: number
   events: number
   ministries: number
   community: number
+  blogs: number
 }
 
 const statCards = [
@@ -16,6 +17,7 @@ const statCards = [
   { key: 'events' as const, label: 'Events', href: '/events', icon: Calendar, bg: '#2D6A4F' },
   { key: 'ministries' as const, label: 'Ministries', href: '/ministries', icon: Users, bg: '#1C3A2E' },
   { key: 'community' as const, label: 'Community Photos', href: '/community', icon: Camera, bg: '#C9A845' },
+  { key: 'blogs' as const, label: 'Blog Posts', href: '/blogs', icon: FileText, bg: '#2D6A4F' },
 ]
 
 const quickActions = [
@@ -23,11 +25,12 @@ const quickActions = [
   { href: '/events', label: 'Manage Events', icon: Calendar },
   { href: '/ministries', label: 'Manage Ministries', icon: Users },
   { href: '/community', label: 'Manage Community Photos', icon: Camera },
+  { href: '/blogs', label: 'Manage Blog Posts', icon: FileText },
   { href: '/site', label: 'Site Configuration', icon: Settings },
 ]
 
 export default function DashboardPage() {
-  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0, community: 0 })
+  const [counts, setCounts] = useState<Counts>({ sermons: 0, events: 0, ministries: 0, community: 0, blogs: 0 })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -36,13 +39,15 @@ export default function DashboardPage() {
       fetch('/api/content/events').then((r) => r.json()),
       fetch('/api/content/ministries').then((r) => r.json()),
       fetch('/api/content/community').then((r) => r.json()),
+      fetch('/api/content/blogs').then((r) => r.json()),
     ])
-      .then(([sermons, events, ministries, community]) => {
+      .then(([sermons, events, ministries, community, blogs]) => {
         setCounts({
           sermons: Array.isArray(sermons) ? sermons.length : 0,
           events: Array.isArray(events) ? events.length : 0,
           ministries: Array.isArray(ministries) ? ministries.length : 0,
           community: Array.isArray(community) ? community.length : 0,
+          blogs: Array.isArray(blogs) ? blogs.length : 0,
         })
       })
       .catch(() => {})

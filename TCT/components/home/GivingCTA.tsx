@@ -48,8 +48,8 @@ export default function GivingCTA() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="text-white/65 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto font-sans"
         >
-          Your generosity fuels the WIDE vision — reaching 100,000 people in Thika County
-          with the life-changing message of Jesus Christ.
+          Your generosity fuels the WIDE vision; reaching 100,000 people in Thika
+          with the life changing message of Jesus Christ.
         </motion.p>
 
         <motion.div

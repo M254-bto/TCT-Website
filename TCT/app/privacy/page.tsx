@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           <p>
             You have the right to request access to, correction of, or deletion of any personal data we hold about you.
             To exercise these rights, contact us at{' '}
-            <a href="mailto:info@tckilifi.org">info@tckilifi.org</a>.
+            <a href="mailto:thikatrinitychapel@gmail.com">thikatrinitychapel@gmail.com</a>.
           </p>
 
           <h2>Changes to This Policy</h2>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
           <h2>Contact</h2>
           <p>
             For any privacy-related questions, please email us at{' '}
-            <a href="mailto:info@tckilifi.org">info@tckilifi.org</a> or visit our{' '}
+            <a href="mailto:thikatrinitychapel@gmail.com">thikatrinitychapel@gmail.com</a> or visit our{' '}
             <a href="/contact">contact page</a>.
           </p>
         </div>

@@ -54,60 +54,67 @@ export default function Footer() {
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
-        <div>
-          <div className="mb-5">
-            <p className="font-serif text-2xl text-white font-semibold">Trinity Chapel</p>
-            <p className="text-[#C9A845] text-xs tracking-[0.2em] uppercase mt-0.5">Thika</p>
-          </div>
-          <p className="text-sm leading-relaxed mb-6 text-white/65 max-w-xs">
-            {site.communityStatement}
-          </p>
-          {/* Social links */}
-          <div className="flex items-center gap-3">
-            {site.socials.facebook && (
-              <a
-                href={site.socials.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
-              >
-                <IconFacebook />
-              </a>
-            )}
-            {site.socials.twitter && (
-              <a
-                href={site.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter / X"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
-              >
-                <IconTwitterX />
-              </a>
-            )}
-            {site.socials.instagram && (
-              <a
-                href={site.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
-              >
-                <IconInstagram />
-              </a>
-            )}
-            {site.socials.youtube && (
-              <a
-                href={site.socials.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
-              >
-                <IconYoutube />
-              </a>
-            )}
+        <div className="flex gap-5 items-start">
+          <img
+            src="/Logo.png"
+            alt="Trinity Chapel Thika Logo"
+            className="w-18 h-18 md:w-22 md:h-22 object-contain rounded-xl bg-white p-1.5 shadow-md border border-white/10 shrink-0"
+          />
+          <div>
+            <div className="mb-5">
+              <p className="font-serif text-2xl text-white font-semibold leading-tight">Trinity Chapel</p>
+              <p className="text-[#C9A845] text-xs tracking-[0.2em] uppercase mt-1">Thika</p>
+            </div>
+            <p className="text-sm leading-relaxed mb-6 text-white/65 max-w-xs">
+              {site.communityStatement}
+            </p>
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              {site.socials.facebook && (
+                <a
+                  href={site.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
+                >
+                  <IconFacebook />
+                </a>
+              )}
+              {site.socials.twitter && (
+                <a
+                  href={site.socials.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter / X"
+                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
+                >
+                  <IconTwitterX />
+                </a>
+              )}
+              {site.socials.instagram && (
+                <a
+                  href={site.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
+                >
+                  <IconInstagram />
+                </a>
+              )}
+              {site.socials.youtube && (
+                <a
+                  href={site.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-colors"
+                >
+                  <IconYoutube />
+                </a>
+              )}
+            </div>
           </div>
         </div>
 
